@@ -1,0 +1,21 @@
+
+
+
+POST: http://localhost:8080/api/employee/create-employees
+
+{
+    "employeeId":34,
+    "name":"John",
+    "location":"USA",
+    "emailId":"abcbhghg@gmail.com"
+}
+
+
+
+GET: http://localhost:8080/api/employee/get-all-employees
+	http://localhost:8080/api/employee/get-employee/{id}
+
+
+PUT: http://localhost:8080/api/employee/update-employees/{id}
+
+DELETE: http://localhost:8080/api/employee/delete-employees/{id}
