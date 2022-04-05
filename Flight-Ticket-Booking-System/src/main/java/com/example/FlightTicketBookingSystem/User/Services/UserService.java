@@ -106,6 +106,7 @@ public class UserService {
         u.get().setFirstName(user.getFirstName());
         u.get().setLastName(user.getLastName());
         u.get().setPassword(user.getPassword());
+
         Contact contact =contactRepository.getById(u.get().getContact().getId());
         contact.setAddressLine(user.getContact().getAddressLine());
         contact.setCity(user.getContact().getCity());

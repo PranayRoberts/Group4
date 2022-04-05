@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "flight")
-public class Flight {
+public class Flight extends FlightStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
