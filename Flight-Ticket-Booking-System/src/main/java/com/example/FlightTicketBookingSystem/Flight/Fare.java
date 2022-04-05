@@ -1,9 +1,9 @@
-package com.example.FlightTicketBookingSystem.Flight.Model;
+package com.example.FlightTicketBookingSystem.Flight;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "name")
+@Table(name = "fare")
 public class Fare {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

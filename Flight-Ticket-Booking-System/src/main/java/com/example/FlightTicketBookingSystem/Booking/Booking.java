@@ -1,6 +1,6 @@
-package com.example.FlightTicketBookingSystem.Booking.Model;
+package com.example.FlightTicketBookingSystem.Booking;
 
-import com.example.FlightTicketBookingSystem.Flight.Model.Flight;
+import com.example.FlightTicketBookingSystem.Flight.Flight;
 
 import javax.persistence.*;
 import java.util.Date;

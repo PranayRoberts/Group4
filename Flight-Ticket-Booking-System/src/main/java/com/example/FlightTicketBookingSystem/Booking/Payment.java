@@ -1,4 +1,4 @@
-package com.example.FlightTicketBookingSystem.Booking.Model;
+package com.example.FlightTicketBookingSystem.Booking;
 
 import javax.persistence.*;
 

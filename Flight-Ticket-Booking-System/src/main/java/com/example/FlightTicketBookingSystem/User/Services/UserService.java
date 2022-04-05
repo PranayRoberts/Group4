@@ -59,7 +59,7 @@ public class UserService {
             else
                 throw new IllegalStateException("please check username and password");
         }
-        //checking for email and password
+        //checking for gi and password
         else if (email.isPresent()) {
             if (email.get().getPassword().equals(password))
                 return email.get();
