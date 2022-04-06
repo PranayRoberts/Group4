@@ -23,7 +23,7 @@ public class Flight extends FlightStatus {
     private Date departureTime;
     private Date arrivalTime;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fare_id")
     private Fare fare;
 

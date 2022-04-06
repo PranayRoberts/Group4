@@ -14,6 +14,7 @@ public class FlightStatus {
     private Integer remainingBusinessSeats;
 
     public FlightStatus() {
+
     }
 
     public FlightStatus(Integer remainingEconomySeats, Integer remainingPremiumSeats, Integer remainingBusinessSeats) {

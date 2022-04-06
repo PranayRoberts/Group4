@@ -44,6 +44,7 @@ public class AdminService {
                     else
                         throw new IllegalStateException("please check username and password");
                 }
+                
                 //checking for email and password
                 else if (email.isPresent()) {
                     if (email.get().getPassword().equals(password))
@@ -53,12 +54,13 @@ public class AdminService {
                 }
                 else
                     throw new IllegalStateException("admin doesn't exists!");
-
-
             }
 
     public Flight createFlight(Flight flight) {
-        return flightRepository.save(flight);
+        Flight flight1 = flightRepository.save(flight);
+        System.out.println(flight1.getStatus());
+
+        return flight1;
     }
     @Transactional
     public Flight UpdateFlight(Integer id,Flight flight){
@@ -79,9 +81,9 @@ public class AdminService {
         fleet.setTotalPremiumSeats(flight.getFleet().getTotalPremiumSeats());
 
         FlightStatus flightStatus = flightStatustReposiory.getById(f.get().getStatus().getId());
-        flightStatus.setRemainingBusinessSeats(100 - flight.getStatus().getRemainingBusinessSeats());
-        flightStatus.setRemainingEconomySeats(100 - flight.getStatus().getRemainingEconomySeats());
-        flightStatus.setRemainingPremiumSeats(100 - flight.getStatus().getRemainingPremiumSeats());
+        flightStatus.setRemainingBusinessSeats(flight.getStatus().getRemainingBusinessSeats());
+        flightStatus.setRemainingEconomySeats(flight.getStatus().getRemainingEconomySeats());
+        flightStatus.setRemainingPremiumSeats(flight.getStatus().getRemainingPremiumSeats());
 
         Fare fare = fareRepository.getById(f.get().getFare().getId());
         fare.setBusinessFare(flight.getFare().getBusinessFare());
@@ -119,6 +121,9 @@ public class AdminService {
         return fleetRepository.save(fleet);
     }
 
+    public Fare addFare(Fare fare){
+        return fareRepository.save(fare);
+    }
     @Transactional
     public Fare UpdateFare(Integer id, Fare fare){
         Optional<Fare> fa = fareRepository.findById(id);
@@ -129,9 +134,7 @@ public class AdminService {
         return fa.get();
     }
 
-    public Fare addFare(Fare fare){
-        return fareRepository.save(fare);
-    }
+
 
 
 

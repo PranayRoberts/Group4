@@ -10,7 +10,7 @@ public class Fare {
     private Integer id;
     private Double economyFare;
     private Double premiumFare;
-    private Double BusinessFare;
+    private Double businessFare;
 
     public Fare() {
     }
@@ -18,7 +18,7 @@ public class Fare {
     public Fare(Double economyFare, Double premiumFare, Double businessFare) {
         this.economyFare = economyFare;
         this.premiumFare = premiumFare;
-        BusinessFare = businessFare;
+        this.businessFare = businessFare;
     }
 
     public Integer getId() {
@@ -46,10 +46,10 @@ public class Fare {
     }
 
     public Double getBusinessFare() {
-        return BusinessFare;
+        return businessFare;
     }
 
     public void setBusinessFare(Double businessFare) {
-        BusinessFare = businessFare;
+        this.businessFare = businessFare;
     }
 }
