@@ -1,0 +1,109 @@
+Register User:
+Post :  http://localhost:8080/api/register/
+Body :
+{
+    "userName": "userName",
+    "email": "pranay@gmail.com",
+    "firstName": "Pranay",
+    "lastName": "Roberts",
+    "password": "password",
+    "contact": {
+        "addressLine": "1-23 East Road",
+        "zipCode": 56000,
+        "city": "Bangalore",
+        "state": "KA",
+        "country": "India",
+        "mobileNo": 1234567890 
+    }
+}
+
+Login User:
+Post : http://localhost:8080/api/login/?userValue=
+Body :
+""
+
+Get all users:
+Get : http://localhost:8080/api/get_user/
+
+Get user:
+Get : http://localhost:8080/api/get_user/1
+
+Forgot Password:
+Post : http://localhost:8080/api/forgot_password/?userValue1=
+
+Post : http://localhost:8080/api/forgot_password/?id=
+Body:
+""
+
+Update User:
+Put : http://localhost:8080/api/update_user/?id=
+Body:
+{
+    "firstName": "",
+    "lastName": "",
+    "password": "",
+    "contact": {
+        "addressLine": "",
+        "zipCode": ,
+        "city": "",
+        "state": "",
+        "country": "",
+        "mobileNo": 
+    }
+}
+
+******************************************************************************************************************************
+
+Register Fleet :
+
+Post: http://localhost:8080/admin/register_fleet/
+
+Body:
+
+{
+    "code":"IND123",
+    "model":"AIR INDIA",
+    "totalBusinessSeats": 50,
+    "totalEconomySeats": 150,
+    "totalPremiumSeats": 120
+}
+
+
+Update Fleet :
+
+Post : http://localhost:8080/admin/update_fleet/?id=
+
+Body :
+
+{
+    "code":"IND123",
+    "model":"INDIGO",
+    "totalBusinessSeats": 50,
+    "totalEconomySeats": 10,
+    "totalPremiumSeats": 20
+}
+
+Register Fare:
+
+Post: http://localhost:8080/admin/register_fare/
+
+Body:
+
+{
+    "economyFare":3000,
+    "premiumFare":5000,
+    "businessFare":10000
+}
+
+update Fare:
+
+Put: http://localhost:8080/admin/update_fare/?id= 
+
+Body:
+
+{
+    "economyFare":5000,
+    "premiumFare":8000,
+    "businessFare":10000
+}
+
