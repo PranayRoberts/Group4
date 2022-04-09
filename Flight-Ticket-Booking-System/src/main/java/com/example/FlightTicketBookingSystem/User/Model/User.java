@@ -1,6 +1,10 @@
 package com.example.FlightTicketBookingSystem.User.Model;
 
+import com.example.FlightTicketBookingSystem.Booking.Model.Booking;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -16,6 +20,9 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "contact_id")
     private Contact contact;
+
+    @OneToMany
+    private List<Booking> bookings = new ArrayList<>();
 
     public User() {
     }

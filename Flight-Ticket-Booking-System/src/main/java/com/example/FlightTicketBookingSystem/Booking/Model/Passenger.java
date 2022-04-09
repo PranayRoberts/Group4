@@ -1,6 +1,8 @@
 package com.example.FlightTicketBookingSystem.Booking.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "passenger")
@@ -12,18 +14,20 @@ public class Passenger {
     private String lastName;
     private Integer age;
     private Character gender;
-    private String psssportNo;
+    private String passportNo;
     private String mealPref;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    List<Booking> booking = new ArrayList<>();
     public Passenger() {
     }
 
-    public Passenger(String firstName, String lastName, Integer age, Character gender, String psssportNo, String mealPref) {
+    public Passenger(String firstName, String lastName, Integer age, Character gender, String passportNo, String mealPref) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
-        this.psssportNo = psssportNo;
+        this.passportNo = passportNo;
         this.mealPref = mealPref;
     }
 
@@ -67,12 +71,12 @@ public class Passenger {
         this.gender = gender;
     }
 
-    public String getPsssportNo() {
-        return psssportNo;
+    public String getPassportNo() {
+        return passportNo;
     }
 
-    public void setPsssportNo(String psssportNo) {
-        this.psssportNo = psssportNo;
+    public void setPassportNo(String passportNo) {
+        this.passportNo = passportNo;
     }
 
     public String getMealPref() {

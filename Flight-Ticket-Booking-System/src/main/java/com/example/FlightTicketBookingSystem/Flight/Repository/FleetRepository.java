@@ -1,4 +1,4 @@
-package com.example.FlightTicketBookingSystem.Flight.Model.Repository;
+package com.example.FlightTicketBookingSystem.Flight.Repository;
 
 import com.example.FlightTicketBookingSystem.Flight.Model.Fleet;
 import com.example.FlightTicketBookingSystem.User.Model.User;

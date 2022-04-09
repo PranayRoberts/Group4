@@ -2,6 +2,8 @@ package com.example.FlightTicketBookingSystem.Flight.Model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "fleet")

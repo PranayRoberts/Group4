@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "flight")
-public class Flight extends FlightStatus {
+public class Flight{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,8 +13,7 @@ public class Flight extends FlightStatus {
     private String departureLocation;
     private String arrivalLocation;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fleet_ID")
+    @OneToOne(cascade = CascadeType.ALL)
     private Fleet fleet;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -34,6 +33,7 @@ public class Flight extends FlightStatus {
     public Fleet getFleet() {
         return fleet;
     }
+
 
     public Flight() {
     }
