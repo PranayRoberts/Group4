@@ -1,0 +1,173 @@
+Q)if the exception is not in arithmetic exception then how to catch that exception?
+You can catch different exceptions in different catch blocks.
+ For example if an arithmetic exception occurs in try block then the statements
+ enclosed in catch block for arithmetic exception executes.
+
+
+Q)what languages do u need to learn as a Android developer?
+Java programming language is a preferred language when it comes to Android games 
+app developmen
+
+
+
+Q)what is cloud ? what is cloud from a w s? what is cloud from Microsoft?
+
+
+ cloud computing means storing and accessing data and programs over the
+ internet instead of your computer's hard drive
+
+Cloud computing is the on-demand delivery of compute power, database, storage, 
+applications, and other IT resources through a cloud services platform via the 
+Internet with pay-as-you-go pricing.
+
+
+ Microsoft Azure
+
+Q)what is html ,css,js?
+
+
+HTML provides the basic structure of sites, which is enhanced and modified by other 
+technologies like CSS and JavaScript. CSS is used to control presentation, formatting, and layout.
+ JavaScript is used to control the behavior of different elements.
+
+
+Q)wap on hello world in html
+<html>
+<header><title>This is title</title></header>
+<body>
+Hello world
+</body>
+</html>
+
+Q)diff btw java and js?
+
+	It is a Programming language.	It is a scripting language.
+2.	Java is a pure Object Oriented Programming Language.	
+
+JavaScript is Object-Based Language.
+3.	Java is a Standalone language.
+	JavaScript is not a standalone language, as it needs to be integrated into an HTML program for execution.
+
+4.	Java is a strongly typed language, which means that the user has to decide the data type of the variable before declaring and using it.
+Example "int a", the variable "a" can store the value of integer type only.	
+
+JavaScript is a loosely typed language, which means that the user does not have to worry about the data-type of the variable before and after the declaration.
+Example "var a", the "a" variable can store the value of any data-type.
+5.	Java program should be compiled before execution.
+	JavaScript needs to be integrated into the HTML program for the execution.
+
+Q)If JavaScript can do frontend then why react and angular ?
+Best front end frameworks. According to Statista, React and Angular are two of the 
+most popular web frameworks among developers worldwide in 2020.
+
+Q)What is angular and react?
+
+What is Angular?
+Angular is a development platform built on the typescript. It is a component-based 
+framework for building scalable web apps. It has a collection of well-integrated libraries and features such as client-server communication, routing, and more.
+ It has a suite of developer tools to develop and scale projects from single-developer size to enterprise-grade applications.
+ Moreover, it’s constantly updated technology with its latest developments led by the Angular team at Google.
+
+What is React?
+React is an open-source JavaScript library used for frontend development. It is used for building user interface or UI components. 
+Its component-based and declarative traits let developers create interactive and complex UIs easily. 
+Developers can build fast and scalable apps for all platforms due to its “learn once write anywhere” principle. 
+React is managed by Facebook and a community of individual developers and communities.
+
+Q) what is orm and hibernate?
+Hibernate ORM (or simply Hibernate) is an object–relational mapping tool for 
+the Java programming language. It provides a framework for mapping an object-oriented
+ domain model to a 
+relational database.
+
+Q). what are the keywords used for...class to class 
+and class to interface and interface to interface?
+
+ans:Keywords used for class to class are extends keyword
+keyword used for interface to interface we cannot implemets.
+class to interface implements
+
+Q). What is the default access for the variables 
+and function define in Java 7?
+ ans:Default access modifier.
+
+Q). How many types of file format is there ?
+ 
+JPEG (Joint Photographic Experts Group) ...
+PNG (Portable Network Graphics) ...
+GIF (Graphics Interchange Format) ...
+PDF (Portable Document Format) ...
+SVG (Scalable Vector Graphics) ...
+MP4 (Moving Picture Experts Group)
+
+
+Q).  Example of rdbms and non rdbms?
+
+Example of rdbms : MySql, Oracle, Sqlite, Postgres 
+and MS-SQL
+
+Example of non-rdbms:  MongoDB, BigTable, Redis, 
+RavenDb, Cassandra, Hbase, Neo4j and CouchDb.
+
+
+
+
+Q). Does python has a support to db2?
+
+Before running the  SQL statements to create, update, 
+delete, or retrieve data, you must connect to a 
+database. For this, one must make use of the database 
+API to connect to a database through either a 
+cataloged or uncataloged connection.
+
+
+Q). Diff Between Spring frame work and spring boot?
+
+Spring framework is a java EE framework that is used to build applications.
+The primary or most important feature of the Spring framework is dependency 
+injection(Dependency Injection (DI) is a design technique that removes dependencies from 
+computer code, making the application easier to maintain and test).
+Its goal is to make Java EE (Enterprise Edition) development easier, allowing developers to be more productive.
+
+
+
+Spring Boot framework is mainly used to develop REST API’s
+The main or primary feature of the Spring Boot is Autoconfiguration( Simply described, Spring Boot
+ autoconfiguration is a method of automatically configuring a Spring application based on the 
+dependencies found on the classpath.)
+Autoconfiguration can speed up and simplify development by removing the need to define some beans 
+that are part of the auto-configuration classes.
+Spring Boot provides the RAD(Rapid Application Development) feature to the Spring framework for faster application development.
+
+Q). Diff Between Linux OS and windows OS?
+
+
+Linux is a open source operating system.
+Linux is free of cost.
+It’s file name case-sensitive.
+In linux, monolithic kernel is used.
+Linux is more efficient in comparison of windows.
+There is forward slash is used for Separating the directories.
+Linux provides more security than windows.
+Linux is widely used in hacking purpose based systems.
+
+
+While windows are the not the open source operating system.
+While it is costly.
+While it’s file name is case-insensitive.
+While in this, micro kernel is used.
+While windows are less efficient.
+While there is back slash is used for Separating the directories.
+While it provides less security than linux.
+While windows does not provide much efficiency in hacking.
+
+
+
+
+
+
+
+
+
+
+

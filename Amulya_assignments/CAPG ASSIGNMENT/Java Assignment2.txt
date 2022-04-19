@@ -1,0 +1,131 @@
+package package1;
+// Java program to illustrate If statement
+class IfDemo {
+public static void main(String args[])
+{
+Sample2333 SampleObj23 = new Sample2333();
+// System.out.println(SampleObj23.add() );
+// System.out.println(SampleObj23.add(1,2) );
+System.out.println(SampleObj23.add("Ramana SAI") );
+}
+}
+
+
+
+class Sample2333
+{
+int a=90;
+byte b= 89;
+
+
+
+String name = "Rachana";
+//non praprmeter
+int add(){
+//comment
+String name = "sdfkgsdf";
+int c= 23+23;
+System.out.println("I am a non paramtereted and with rtetuurn value function");
+return c ;
+}
+int add(int a, int b){
+//comment
+int c= a+b;
+System.out.println("I am parametered nd with rtetuurn value function");
+return c;
+}
+boolean add(String str){
+//comment
+System.out.println("Hellow " +str +"can you hear me ?");
+return false;
+}
+}
+
+
+
+
+Q)why the output is showing false????
+A)Its because add method is return false.
+
+
+q) what is difference b/w constructor and function in the class?
+
+Constructor :-
+Constructor is a block of code that initializes a newly created object.	
+Constructor has the same name as class name.	
+Constructor has no return type not even void.
+
+Function :-
+Function requires a valid return type.
+Function is a group of statements that can be called at any point in the program using its name to perform a specific task.
+Function should have a different name than class name.
+
+example you can see that I have created constructor pqr which is on the name of class but i have created function with the name of sum().
+
+
+public class pqr
+{
+public int p, q;
+public pqr()
+    {
+        p = 10;
+        q = 20;
+    }
+    public int sum()
+    {
+        return (p + q);
+    }
+}
+
+
+
+q)  who gives default constructor?
+The compiler automatically provides a no-argument, default constructor for any class without constructors. This default constructor will call the no-argument constructor of the superclass.
+
+q)what are other responsibilities if jvm In java call by reference or call by value?
+If we call a method passing a value, it is known as call by value. The changes being done in the called method, is not affected in the calling method.
+
+q)who is providing the extra functions is java?
+Java functional interface can be implemented by a Java Lambda Expression
+q)why only jvm gives default constructor?
+The Java compiler provides a default constructor if you don't have any constructor in a class
+
+q)what happens if a final keyword is applied on class and function?
+If we initialize a variable with the final keyword, then we cannot modify its value. If we declare a method as final, then it cannot be overridden by any subclasses. And, if we declare a class or constructor as final, we restrict the other classes or constructor to inherit or extend it.
+
+q) what happens if final keyword is applied on variable , class and method?
+If we declare a method as final, then it cannot be overridden by any subclasses.
+if we declare a class or constructor as final, we restrict the other classes or constructor to inherit or extend it.
+
+q) why string is passed in main method?
+Because by passing String arrays , we can pass all the necessary parameters like options/arguments related to the program in the form of String easily. There can be several parameters! Also, all the other datatypes can be easily converted from String.
+
+q)why only jvm gives default constructor?
+In case, programmer does not provide any constructor in class definition 
+– JVM provides a default constructor to the class in runtime. In default constructor, name of the constructor MUST match the class name and it should not have any parameters
+
+
+
+q)who provides extra functions in main method?
+It is a default signature which is predefined in the JVM. It is called by JVM to execute a program line by line and end the execution after completion of this method
+
+q)difference b/w java 8 and java7?
+  Java SE 7 was the first and the major update to the programming language under the ownership and stewardship of Oracle Corporation after it acquired Sun Microsystems in 2010. Java 8, on the other hand, was the next biggest update after Java 7 which accommodates some major features and enhancements to the Java model.
+  One of the most notable features added in the Java 7 is the JVM support for dynamically-typed languages plus small language enhancements (Project Coin). Java 8 is a major update to the programming language which introduced a significant upgrade to the functional programming called the Lambda Expressions.
+  Java 8 also gets a new and improved Date/Time API, an enhanced JavaScript engine, new streaming API. Concurrent accumulators, secure random generation, and much more. Java 7 had improved class-loader architecture, enhanced Managed Beans, multiple exceptions handling support, etc.
+  Java 7 added a language support for String in switch so users can rewrite codes more efficiently and easily. This helps users write better readable codes. The Lambda Expressions in Java 8 allow you to code local functions as method arguments.
+  Oracle stopped dispersing security updates for Java SE 7 effective April 2015, however existing downloads as remain accessible from the Java Archive. Java 8 public downloads will reportedly be stopped after Sept 2018.
+
+q) why collections were use?
+Collections are used to store, retrieve, manipulate, and communicate aggregate data.
+
+q) difference b/w collection and collections?
+Collection:-
+It is an interface in Java collection framework 
+t doesn't has all static methods 
+It is used to store list of object in a single object  
+
+Collections:-
+It is a utility class in Collection framework 
+It has all static method 
+It is used to operate on collection.

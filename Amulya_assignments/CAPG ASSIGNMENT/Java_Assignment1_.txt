@@ -1,0 +1,39 @@
+
+Q)difference between sdk jre jdk?
+
+A software development kit (SDK or devkit) is a set of software development tools that allows the creation of applications for a certain software package, software framework, computer system,operating system, or similar development platform.
+JDK means Java Development Kit. This is a software development environment used for developing Java applications and applets. It includes the Java Runtime Environment (JRE), an interpreter/loader , a compiler etc
+JRE is an acronym for Java Runtime Environment. It is used to provide runtime environment.
+It is the implementation of java virtual machine(JVM). It contains set of libraries and other files that JVM uses at runtime.
+
+
+
+
+Q) Default java packages?
+
+Java compiler imports java.lang package internally by default. It provides the fundamental classes that are necessary to design a basic Java program. 
+
+q)Can we have an else condition without if condition?
+
+No it cannot be done.
+
+q) Other than boolean can we use anything in if condition?
+
+if ( condition ) statement; if is a Java reserved word The condition must be a boolean expression. It must evaluate to either true or false.
+
+q)Why break is imp in switch case?
+break is necessary to avoid passing through to the code under the next label
+
+q)Understand diff between WAR,EAR,JAR file?
+
+The main difference between JAR WAR and EAR files is that the JAR file is a file that has Java class files, related metadata, and resources combined into a single file to execute a Java application. On the other hand, the WAR file is a file that contains files such as a servlet, JSP, HTML, JavaScript etc., which are necessary to develop web applications while the  EAR is a Java EE file that packs one or more modules into a single archive to deploy them on to an application server.
+
+q)How can you tell the technology by seeing URL?
+
+In Chrome, look for Developer Tools, in Firefox look for Web Developer in your menu. The source code's file extensions and URLs can tell you what type of platform the website is built on.
+
+Q)why break is imp in switch case?
+
+The case statements in a switch statements are simply labels. When you switch on a value, the switch statement essentially does a goto to the label with the matching value.
+
+This means that the break is necessary to avoid passing through to the code under the next label.
