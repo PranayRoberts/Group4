@@ -1,6 +1,34 @@
+flight_ticket_booking_system
+
+---USER---
+
 Register User:
 Post :  http://localhost:8080/api/register/
 Body :
+flights_ticket_booking_system
+
+Login User:
+Post : http://localhost:8080/api/login/?userValue=userName
+Body :
+password
+[validations: Invalid user/password]
+
+Get : http://localhost:8080/api/get_user/
+
+Get : http://localhost:8080/api/get_user/1
+
+
+
+Forgot Password:
+//Post : http://localhost:8080/api/forgot_password/?userValue1=emailID
+Body: password
+
+Post : http://localhost:8080/api/forgot_password/?id=
+Body: updatedPassword
+
+Update User:
+Put : http://localhost:8080/api/update_user/?id=
+Body:
 {
     "userName": "userName",
     "email": "pranay@gmail.com",
@@ -17,67 +45,119 @@ Body :
     }
 }
 
-Login User:
-Post : http://localhost:8080/api/login/?userValue=
-Body :
-""
+---ADMIN---
 
-Get all users:
-Get : http://localhost:8080/api/get_user/
+Register Admin: 
 
-Get user:
-Get : http://localhost:8080/api/get_user/1
+Post: http://localhost:8080/admin/register_admin/
 
-Forgot Password:
-Post : http://localhost:8080/api/forgot_password/?userValue1=
-
-Post : http://localhost:8080/api/forgot_password/?id=
-Body:
-""
-
-Update User:
-Put : http://localhost:8080/api/update_user/?id=
-Body:
 {
-    "firstName": "",
-    "lastName": "",
-    "password": "",
-    "contact": {
-        "addressLine": "",
-        "zipCode": ,
-        "city": "",
-        "state": "",
-        "country": "",
-        "mobileNo": 
-    }
+    "id":1,
+    "userName":"adminUser",
+    "password": "password"
+
 }
+'
 
-******************************************************************************************************************************
+Login Admin: 
 
-Register Fleet :
+Post: http://localhost:8080/admin/login_admin/?userValue=adminUser
 
-Post: http://localhost:8080/admin/register_fleet/
+Body:
+password
+
+
+--- ADMIN ---
+
+Create Flight :
+
+Post: http://localhost:8080/admin/create_flight/
 
 Body:
 
 {
-    "code":"IND123",
-    "model":"AIR INDIA",
-    "totalBusinessSeats": 50,
-    "totalEconomySeats": 150,
-    "totalPremiumSeats": 120
+    "departureLocation":"Sydney",
+    "arrivalLocation":"Tokyo",
+    "fleet": {
+   	 		"code":"IND123",
+   	 		"model":"INDIGO",
+  	  		"totalBusinessSeats": 50,
+  	  		"totalEconomySeats": 10,
+   	 		"totalPremiumSeats": 20
+	},
+			
+    "status": {
+   	 		"remainingEconomySeats": 20,
+   	 		"remainingPremiumSeats": 5,
+  	  		"remainingBusinessSeats": 1
+	},
+    "departureTime": "2022-11-30",
+    "arrivalTime": "2022-01-01",
+    "fare": {
+   	 		"economyFare": 500.00,
+   	 		"premiumFare": 1000.00,
+  	  		"businessFare": 1250.50
+}
+}
+
+Update Flight :
+
+Put: http://localhost:8080/admin/update_flight/?id=
+
+Body:
+
+{
+    "departureLocation":"x",
+    "arrivalLocation":"y",
+    "fleet": {
+   	 		"code":"VIS123",
+   	 		"model":"Vistara",
+  	  		"totalBusinessSeats": 50,
+  	  		"totalEconomySeats": 10,
+   	 		"totalPremiumSeats": 20
+	}
+			
+    "status": {
+   	 		"remainingEconomySeats": 20,
+   	 		"remainingPremiumSeats": 5,
+  	  		"remainingBusinessSeats": 1
+	}
+
+	
+    "departureTime": 2022-10-30
+    "arrivalTime": 2022-11-01
+    "fare": {
+   	 		"economyFare": 500.00,
+   	 		"premiumFare": 1000.00,
+  	  		"businessFare": 1250.50
+
 }
 
 
-Update Fleet :
 
-Post : http://localhost:8080/admin/update_fleet/?id=
+Create Fleet:
+
+Post: http://localhost:8080/admin/create_fleet/
 
 Body :
 
 {
     "code":"IND123",
     "model":"INDIGO",
+    "totalBusinessSeats": 50,
+    "totalEconomySeats": 10,
+    "totalPremiumSeats": 20
+}
+
+Update Fleet :
+
+Put : http://localhost:8080/admin/update_fleet/?id=
+
+Body :
+
+{
+    "code":"VIS123",
+    "model":"Vistara",
     "totalBusinessSeats": 50,
     "totalEconomySeats": 10,
     "totalPremiumSeats": 20
@@ -95,7 +175,7 @@ Body:
     "businessFare":10000
 }
 
-update Fare:
+Update Fare:
 
 Put: http://localhost:8080/admin/update_fare/?id= 
 
@@ -107,3 +187,119 @@ Body:
     "businessFare":10000
 }
 
+
+Add Location:
+
+Post: http://localhost:8080/admin/add_location/
+
+Body:
+
+{
+    "name":"Bangalore",
+    "code":"BANG123",
+    "country":"India",
+    "airportName":"Kempegowda"
+
+}
+
+Update Location:
+
+Put: http://localhost:8080/admin/update_location/?id= 
+
+Body:
+
+{
+    "name":"Bombay",
+    "code":"BOM123",
+    "country":"India",
+    "airportName":"Chhatrapati Shivaji Maharaj"
+
+}
+
+
+
+Add Status:
+
+Post: http://localhost:8080/admin/add_status/
+
+Body:
+
+{
+   	 		"remainingEconomySeats": 20,
+   	 		"remainingPremiumSeats": 5,
+  	  		"remainingBusinessSeats": 1
+
+}
+
+Update Status :
+
+Put: http://localhost:8080/admin/update_status/?id= 
+
+Body:
+
+{
+   	 		"remainingEconomySeats": 10,
+   	 		"remainingPremiumSeats": 15,
+  	  		"remainingBusinessSeats": 4
+
+}
+
+Search Flight: 
+
+Get: http://localhost:8080/admin/search_flights/
+
+http://localhost:8080/admin/search_flights/?departureLocation=Sydney&arrivalLocation=Tokyo
+
+
+Advanced Search
+
+Post: http://localhost:8080/admin/advanced_search/
+
+http://localhost:8080/admin/advanced_search/?searchParameter=departureLocation&searchValue=Sydney
+
+
+http://localhost:8080/admin/advanced_search/?searchParameter=arrivalLocation&searchValue=Tokyo
+
+
+http://localhost:8080/admin/advanced_search/?searchParameter=arrivalTime&searchValue=2022-01-01 05:30:00
+
+http://localhost:8080/admin/advanced_search/?searchParameter=departureTime&searchValue=2022-11-30 05:30:00
+
+http://localhost:8080/admin/advanced_search/?searchParameter=flightNumber&searchValue=1
+
+
+
+Get All Flights:
+
+Get: http://localhost:8080/admin/get_Flights/
+
+Get Flight By ID:
+
+Get: http://localhost:8080/admin/get_Flight/1
+
+**************************
+
+
+Post: http://localhost:8080/booking/book/
+
+
+
+{
+    "bookingNumber":1,
+    "bookingDate":"2022-11-30",
+    "travelDate": "2022-11-30",
+    "totalCost" : 20000.0,
+    "passenger" :   {
+        "firstName":"first",
+        "lastName":"last",
+        "age": 69,
+        "gender": "F",
+        "psssportNo" : "ABC12345",
+        "mealPref" : "veg"
+    }
+}
+
+
+Get: http://localhost:8080/booking/getbook/
+
+//Post: http://localhost:8080/booking/pbook/

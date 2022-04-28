@@ -1,15 +1,14 @@
 package com.example.FlightTicketBookingSystem.User.Controller;
 
-import com.example.FlightTicketBookingSystem.Flight.Flight;
 import com.example.FlightTicketBookingSystem.User.Model.User;
 import com.example.FlightTicketBookingSystem.User.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(path = "api/")
 public class UserController {
@@ -54,11 +53,5 @@ public class UserController {
     public User updateUser(@RequestParam(required = true) Integer id,
                            @RequestBody(required = true) User user){
         return service.UpdateUser(id,user);
-    }
-
-
-    @GetMapping (path = "searchFlights/")
-    public Flight searchFlights(@RequestParam(required = false) String arrivalLocation,@RequestParam(required = false) String departureLocation) {
-        return service.searchFlight(arrivalLocation,departureLocation);
     }
 }

@@ -1,11 +1,9 @@
 package com.example.FlightTicketBookingSystem.User.Services;
 
-import com.example.FlightTicketBookingSystem.Flight.Flight;
 import com.example.FlightTicketBookingSystem.User.Model.Contact;
 import com.example.FlightTicketBookingSystem.User.Model.User;
-import com.example.FlightTicketBookingSystem.Repositories.ContactRepository;
-import com.example.FlightTicketBookingSystem.Repositories.FlightRepository;
-import com.example.FlightTicketBookingSystem.Repositories.UserRepository;
+import com.example.FlightTicketBookingSystem.User.Repository.ContactRepository;
+import com.example.FlightTicketBookingSystem.User.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +16,6 @@ public class UserService {
 
     UserRepository userRepository;
     ContactRepository contactRepository;
-    FlightRepository flightRepository;
 
     public UserService() {
     }
@@ -32,10 +29,10 @@ public class UserService {
     public User registerUser(User user) {
         Optional<User> userName = userRepository.findUserByUserName(user.getUserName());
         if (userName.isPresent())
-            throw new IllegalStateException("Username already exists!");
+            throw new IllegalStateException("User already exists!");
         Optional<User> email = userRepository.findUserByEmail(user.getEmail());
         if (email.isPresent())
-            throw new IllegalStateException("email already exists!");
+            throw new IllegalStateException("User already exists!");
         return userRepository.save(user);
     }
 
@@ -47,7 +44,7 @@ public class UserService {
         if (user.isPresent()){
             return user.get();
         }
-        else throw new IllegalStateException("User doesn't exists");
+        else throw new IllegalStateException("User doesn't exists, Register User!!");
     }
 
     public User loginUser(String userValue, String password) {
@@ -60,14 +57,14 @@ public class UserService {
             if (userName.get().getPassword().equals(password))
                 return userName.get();
             else
-                throw new IllegalStateException("please check username and password");
+                throw new IllegalStateException("please enter valid username and password");
         }
-        //checking for gi and password
+        //checking for email and password
         else if (email.isPresent()) {
             if (email.get().getPassword().equals(password))
                 return email.get();
             else
-                throw new IllegalStateException("please check email and password");
+                throw new IllegalStateException("please enter valid email and password");
         }
         else
             throw new IllegalStateException("user doesn't exists!");
@@ -77,7 +74,7 @@ public class UserService {
 
     @Transactional
     public Integer forgotPassword(Integer id, String userValue1, String userValue2) {
-        if (userValue1!=null && id==null && userValue2==null){
+         if (userValue1!=null && id!=null && userValue2==null){
             Optional<User> userName = userRepository.findUserByUserName(userValue1);
             Optional<User> email = userRepository.findUserByEmail(userValue1);
 
@@ -85,30 +82,48 @@ public class UserService {
             if (userName.isPresent()) {
                 return userName.get().getId();
             }
-            //checking for email and password
             else if (email.isPresent()) {
-                return email.get().getId();
-            }
+                 return email.get().getId();
+             }
             else
                 throw new IllegalStateException("user doesn't exists!");
         }
-        else if(userValue1==null && id!=null && userValue2!=null){
+         else if(userValue1==null && id!=null && userValue2!=null){
             Optional<User> user = userRepository.findById(id);
             if (user.isPresent()){
                 user.get().setPassword(userValue2);
-                return 0;
+                return 1;
             }
         }
-        return -1;
+         else if(userValue1!=null && id!=null && userValue2!=null){
+            Optional<User> userName = userRepository.findUserByUserName(userValue1);
+            Optional<User> email = userRepository.findUserByEmail(userValue1);
+            if(userName.isPresent() || email.isPresent()){
+                userName.get().setPassword(userValue2);
+                return 1;
+            }
+            else {
+                throw new IllegalStateException("Invalid username or mail id");
+            }
+
+        }
+         else{
+             return -1;
+         }
+
+        return id;
     }
 
 
     @Transactional
     public User UpdateUser(Integer id,User user){
         Optional<User> u = userRepository.findById(id);
+        u.get().setUserName(user.getUserName());
+        u.get().setEmail(user.getEmail());
         u.get().setFirstName(user.getFirstName());
         u.get().setLastName(user.getLastName());
         u.get().setPassword(user.getPassword());
+
         Contact contact =contactRepository.getById(u.get().getContact().getId());
         contact.setAddressLine(user.getContact().getAddressLine());
         contact.setCity(user.getContact().getCity());
@@ -118,19 +133,4 @@ public class UserService {
         contact.setMobileNo(user.getContact().getMobileNo());
         return u.get();
     }
-
-                                                                //needs particular date
-    public Flight searchFlight(String arrivalLocation, String departureLocation){
-        Optional<Flight> start=flightRepository.findFlightByArrivalLocation(arrivalLocation);
-        Optional<Flight> end= flightRepository.findFlightByDepartureLocation(departureLocation);
-        if (start.isPresent() && end.isPresent()){
-            return start.get();
-        }
-        else {
-            throw new IllegalStateException("No such Flight between " + arrivalLocation + "and "+ departureLocation);
-        }
-    }
-
-
-
 }

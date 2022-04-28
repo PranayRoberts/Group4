@@ -2,12 +2,9 @@ package com.example.FlightTicketBookingSystem.Admin.Services;
 
 
 
-import com.example.FlightTicketBookingSystem.Admin.Repositories.FareRepository;
-import com.example.FlightTicketBookingSystem.Admin.Repositories.FleetRepository;
+import com.example.FlightTicketBookingSystem.Repositories.*;
 import com.example.FlightTicketBookingSystem.Flight.Fare;
 import com.example.FlightTicketBookingSystem.Flight.Fleet;
-import com.example.FlightTicketBookingSystem.User.Model.Contact;
-import com.example.FlightTicketBookingSystem.User.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +15,10 @@ import java.util.Optional;
 public class AdminService {
     FleetRepository fleetRepository;
     FareRepository fareRepository;
+    FlightRepository flightRepository;
+    FlightStatusRepository flightStatusRepository;
+    LocationRepository locationRepository;
+
 
     public AdminService() {
     }
@@ -60,6 +61,12 @@ public class AdminService {
         w.get().setBusinessFare(fare.getBusinessFare());
         return w.get();
     }
+
+    
+
+
+
+
 
 }
 
